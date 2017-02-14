@@ -44,7 +44,7 @@ function configureContainer(container) {
   httpClient.configure(config => {
     config
       .useStandardConfiguration()
-      .withBaseUrl('http://www.api.groupbookit.com/api');
+      .withBaseUrl('https://api.groupbookit.com/api');
   });
   container.registerInstance(HttpClient, httpClient);
 }
