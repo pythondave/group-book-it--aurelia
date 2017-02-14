@@ -1,0 +1,11 @@
+<template>
+  <require from="./booking-mini.html"></require>
+
+  <section class="au-animate">
+    <h2>${heading}</h2>
+    <hr>
+    <div class="au-animate" repeat.for="booking of bookings">
+      <booking-mini booking.bind="booking"></booking-mini>
+    </div>
+  </section>
+</template>
