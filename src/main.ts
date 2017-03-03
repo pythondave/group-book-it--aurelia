@@ -36,7 +36,7 @@ export async function configure(aurelia: Aurelia) {
   */
 }
 
-const fetch = !self.fetch ? System.import('isomorphic-fetch') : Promise.resolve(self.fetch);
+const fetch = !(<any>self).fetch ? System.import('isomorphic-fetch') : Promise.resolve((<any>self).fetch);
 
 function configureContainer(container) {
   // ref: http://stackoverflow.com/a/35141543
