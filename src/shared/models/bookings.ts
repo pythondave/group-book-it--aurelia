@@ -13,12 +13,19 @@ export class Bookings {
     this.api = api;
   }
 
-  async get(): Promise<Booking[]> {
+  async get(): Promise<Bookings> {
     const json = await this.api.bookings.get();
-    for (let item of json) {
-      let booking = Generic.Json.deserialize(Booking, item);
-      if (booking) this.list.push(booking);
-    }
-    return this.list;
+    this.deserialize(json.data, json.included);
+    return this;
   }
+
+  deserialize(objectJson: Array<any>, included?: any): Bookings {
+    this.list = [];
+    for (let item of objectJson) {
+      let booking = new Booking().deserialize(item, included);
+      this.list.push(booking);
+    }
+    return this;
+  }
+
 }

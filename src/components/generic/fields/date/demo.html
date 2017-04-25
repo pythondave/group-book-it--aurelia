@@ -1,0 +1,13 @@
+<template>
+  <require from="./date.html"></require>
+
+  <h2>Demo of date field component</h2>
+
+  <h3>Basic - no label or value set</h3>
+  <date></date>
+  <hr>
+
+  <h3>With label and 2-way value binding</h3>
+  <date label.bind="'My label'" value.two-way="value"></date>
+  <div class="mt1">Value in demo: ${value}</div>
+</template>

@@ -1,0 +1,19 @@
+<template>
+  <require from="./../../shared/services/value-converters/main"></require>
+
+  <div>
+    <div class="col-md-2">
+      <ul class="well nav nav-pills nav-stacked">
+        <li style="margin-bottom: 1em;">
+          <input style="width: 100%" type="text" value.bind="demos.search"></input>
+        </li>
+        <li repeat.for="row of router.navigation | filterOnProperty:'title':demos.search" class="${row.isActive ? 'active' : ''}">
+          <a href.bind="row.href">${row.title}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-10" style="padding: 0">
+      <router-view></router-view>
+    </div>
+  </div>
+</template>

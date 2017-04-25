@@ -1,0 +1,13 @@
+<template>
+  <require from="./text.html"></require>
+
+  <h2>Demo of text field component</h2>
+
+  <h3>Basic - no label, placeholder or value set</h3>
+  <text></text>
+  <hr>
+
+  <h3>With label, placeholder, and 2-way value binding</h3>
+  <text label.bind="'My label'" placeholder.bind="'My placeholder'" value.two-way="value"></text>
+  <div class="mt1">Value in demo: ${value}</div>
+</template>

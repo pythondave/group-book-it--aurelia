@@ -1,0 +1,22 @@
+<template bindable="booking">
+  <require from="./../generic/row/rn-row.html"></require>
+
+  <div class="booking-card" >
+    <a class="row" route-href="route: booking; params.bind: { id: booking.id }">
+      <!-- field list - useful during development -->
+      <div class="col-xs-12 col-md-6">
+        <rn-row label.bind="'id'">${booking.id}</rn-row>
+        <rn-row label.bind="'startingAt'">${booking.startingAt}</rn-row>
+        <rn-row label.bind="'numberOfDiners'">${booking.numberOfDiners}</rn-row>
+        <rn-row label.bind="'cutOffDate'">${booking.cutOffDate}</rn-row>
+        <rn-row label.bind="'createdAt'">${booking.createdAt}</rn-row>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <rn-row label.bind="'organiser.forename'">${booking.organiser.forename}</rn-row>
+        <rn-row label.bind="'organiser.surname'">${booking.organiser.surname}</rn-row>
+        <rn-row label.bind="'organiser.emailAddress'">${booking.organiser.emailAddress}</rn-row>
+        <rn-row label.bind="'organiser.telephoneNumber'">${booking.organiser.telephoneNumber}</rn-row>
+      </div>
+    </a>
+  </div>
+</template>

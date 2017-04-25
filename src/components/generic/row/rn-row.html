@@ -1,0 +1,10 @@
+<template bindable="label,col1">
+  <div class="row">
+    <div class="col-xs-${col1 || 5}" style="color: gray">
+      ${label}
+    </div>
+    <div class="col-xs-${col1 ? 12-col1 : 7}">
+      <slot></slot>
+    </div>
+  </div>
+</template>

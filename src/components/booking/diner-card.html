@@ -1,0 +1,21 @@
+<template bindable="diner">
+  <require from="./../generic/row/rn-row.html"></require>
+
+  <div class="diner-card" >
+    <!-- <a class="row" route-href="route: diner; params.bind: { id: diner.id }">-->
+    <a class="row">
+      <!-- field list - useful during development -->
+      <div class="col-xs-12 col-md-6">
+        <rn-row label.bind="'forename'">${diner.forename}</rn-row>
+        <rn-row label.bind="'surname'">${diner.surname}</rn-row>
+        <rn-row label.bind="'addedAt'">${diner.addedAt}</rn-row>
+        <rn-row label.bind="'addedByEmailAddress'">${diner.addedByEmailAddress}</rn-row>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <rn-row label.bind="'lastUpdatedByEmailAddress'">${diner.lastUpdatedByEmailAddress}</rn-row>
+        <rn-row label.bind="'lastUpdatedAt'">${diner.lastUpdatedAt}</rn-row>
+        <rn-row label.bind="'notes'">${diner.notes}</rn-row>
+      </div>
+    </a>
+  </div>
+</template>

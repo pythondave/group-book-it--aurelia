@@ -1,0 +1,50 @@
+<template>
+  <require from="./../generic/row/rn-row.html"></require>
+  <require from="./diner-card.html"></require>
+
+  <section class="au-animate">
+    <h2>${heading}</h2>
+    <hr>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Booking</h3>
+        <rn-row label.bind="'id'">${id}</rn-row>
+        <rn-row label.bind="'startingAt'">${startingAt}</rn-row>
+        <rn-row label.bind="'numberOfDiners (estimated/reserved)'">${numberOfDiners}</rn-row>
+        <rn-row label.bind="'cutOffDate'">${cutOffDate}</rn-row>
+        <rn-row label.bind="'createdAt'">${createdAt}</rn-row>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Status</h3>
+        <rn-row label.bind="'status.name'">${status.name}</rn-row>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Organiser</h3>
+        <rn-row label.bind="'organiser.forename'">${organiser.forename}</rn-row>
+        <rn-row label.bind="'organiser.surname'">${organiser.surname}</rn-row>
+        <rn-row label.bind="'organiser.emailAddress'">${organiser.emailAddress}</rn-row>
+        <rn-row label.bind="'organiser.telephoneNumber'">${organiser.telephoneNumber}</rn-row>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Menu</h3>
+        <rn-row label.bind="'menu.name'">${menu.name}</rn-row>
+        <rn-row label.bind="'menu.notes'">${menu.notes}</rn-row>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Diners (${diners.length})</h3>
+        <div class="au-animate" repeat.for="diner of diners">
+          <diner-card diner.bind="diner"></diner-card>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</template>
