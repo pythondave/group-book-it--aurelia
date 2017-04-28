@@ -33,8 +33,8 @@ describe('the Users module', () => {
     var sut = new Users(getHttp);
 
     sut.activate().then(() => {
-      expect(sut.users).toBe(itemStubs);
-      expect(sut.users).not.toBe(itemFake);
+      expect<any>(sut.users).toBe(itemStubs);
+      expect<any>(sut.users).not.toBe(itemFake);
       done();
     });
   });
